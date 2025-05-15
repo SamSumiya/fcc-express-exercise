@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 require('dotenv').config()
 
+
+const bp = bodyParser.urlencoded({extended: false})
+app.use(bp)
 console.log('Hello World');
 
 const mware = function( req, res, next ) {
