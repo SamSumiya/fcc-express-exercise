@@ -22,6 +22,13 @@ app.get('/now', function(req, res, next) {
     })
 })
 
+app.get('/name', function(req, res) {
+   const firstName = req.query.first
+   const lastName = req.query.last
+
+   res.json({ name:`${firstName} ${lastName}`})
+})
+
 app.get('/:word/echo', function(req, res) {
     return res.json({
         echo: req.params.word
