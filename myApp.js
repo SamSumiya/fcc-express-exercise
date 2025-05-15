@@ -8,10 +8,11 @@ console.log('Hello World');
 
 app.use('/public', express.static(__dirname + '/public'));
 
-app.get('/json', function( req, res, next ) {
+app.use(function( req, res, next ) {
     console.log(`${req.method} ${req.path} ${req.ip}`)
     next()
-})
+}) 
+// app.get('/json',)
 
 app.get('/json', function( req, res, next ) {
     console.log(`${req.method} ${req.path} ${req.ip}`)
