@@ -63,7 +63,10 @@ app.get("/", function(req, res) {
 )
 
 app.post('/name', function(req, res ) {
-    console.log(JSON.stringify(req.body))
+    const first = req.body.first;
+    const last = req.body.last;
+    
+    res.json({ name: `${first} ${last}`})
 } )
 
 module.exports = app;
