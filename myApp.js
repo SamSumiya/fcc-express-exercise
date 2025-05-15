@@ -4,10 +4,10 @@ require('dotenv').config()
 
 console.log('Hello World');
 
-const mware = (function( req, res, next ) {
+const mware = function( req, res, next ) {
     console.log(`${req.method} ${req.path} ${req.ip}`)
     next()
-}) 
+}
 
 app.use(mware)
 
