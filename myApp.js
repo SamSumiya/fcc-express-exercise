@@ -7,7 +7,7 @@ console.log('Hello World');
 
 app.use('/public', express.static(__dirname + '/public'));
 
-get('/json', function(req, res) {
+app.get('/json', function(req, res) {
     return res.json({"message": "Hello json"})
 })
 
