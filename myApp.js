@@ -22,6 +22,12 @@ app.get('/now', function(req, res, next) {
     })
 })
 
+app.get('/:word/echo', function(req, res) {
+    return res.json({
+        echo: req.params.word
+    })
+})
+
 app.get('/json', function( req, res, next ) {
     console.log(`${req.method} ${req.path} ${req.ip}`)
     next()
