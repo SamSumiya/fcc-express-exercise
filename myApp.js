@@ -4,15 +4,16 @@ require('dotenv').config()
 
 console.log('Hello World');
 
-app.use(function( req, res, next ) {
+const mware = (function( req, res, next ) {
     console.log(`${req.method} ${req.path} ${req.ip}`)
     next()
 }) 
 
+app.use(mware)
+
 app.use('/public', express.static(__dirname + '/public'));
 
 
-// app.get('/json',)
 
 app.get('/json', function( req, res, next ) {
     console.log(`${req.method} ${req.path} ${req.ip}`)
